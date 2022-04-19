@@ -1,6 +1,8 @@
-### Aula05 - SDM - Terça - Manhã - 05/04
+### Aula08 - SDM - Terça - Manhã - 19/04
 
-# Criando uma API RESTful com NodeJS e Express
+# Versão com persistência e front-end para consumir API
+
+## Criando uma API RESTful com NodeJS e Express
 
 1. Após criar nosso repositório no gitHub....
     - Abrir terminal (git bash) em uma pasta    
@@ -10,7 +12,7 @@
 
     exemplo para clonar este repositório:
 
-    `git clone https://github.com/mmamorim/Aula06SDMManha0504.git`
+    `git clone https://github.com/mmamorim/Aula08SDM1904Manha.git`
 
 2. Abrir a pasta com o VSCode
 
