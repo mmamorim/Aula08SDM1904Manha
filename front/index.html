@@ -7,117 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste API</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <h1>Teste da nossa API</h1>
-        <button class="btn btn-sm btn-primary" id="btn1">pegar dados pessoas</button>
-        <button class="btn btn-sm btn-primary" id="btn2">pegar dados bandas</button>
-        <div class="row">
-            <div class="col-4">
-                <div class="card p-2 mt-2" id="caixaResposta">
-                    sem resposta
-                </div>
-
-                <div class="card p-2 mt-2">
-                    <button class="btn btn-sm btn-primary" id="btn3">Inserir dados bandas</button>
-                    <div>
-                        <div>
-                            <span>ID:</span>
-                            <input id="txtID" name="id" type="text">
-                        </div>
-                        <div>
-                            <span>Nome:</span>
-                            <input id="txtNome" name="name" type="text">
-                        </div>
-                        <div>
-                            <span>País:</span>
-                            <input id="txtPais" name="country" type="text">
-                        </div>
-                        <div>
-                            <span>Estilo:</span>
-                            <input id="txtEstilo" name="style" type="text">
-                        </div>
-                    </div>
-                </div>
-
+    <div id="meuApp">
+        <topo></topo>
+        <div class="grid grid-cols-8 my-1">
+            <div class="col-span-1 border bg-gray-50 p-1">
+                <menuesquerdo></menuesquerdo>
+            </div>
+            <div class="col-span-7 p-1">
+                <painel></painel>
             </div>
         </div>
-
-
     </div>
 
-    <script>
-
-        let btn1 = document.getElementById("btn1");
-        //console.log("btn1",btn1);
-        btn1.addEventListener("click", () => {
-            console.log("clicou no botão");
-            axios.get('http://localhost:4000/api/v1/pessoas')
-                .then(function (response) {
-                    console.log(response.data);
-                    let caixa = document.getElementById("caixaResposta");
-                    caixa.innerText = JSON.stringify(response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-        })
-
-        let btn2 = document.getElementById("btn2");
-        //console.log("btn1",btn1);
-        btn2.addEventListener("click", () => {
-            console.log("clicou no botão");
-            axios.get('http://localhost:4000/api/v1/bandas')
-                .then(function (response) {
-                    console.log(response.data);
-                    let caixa = document.getElementById("caixaResposta");
-                    caixa.innerText = JSON.stringify(response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-        })
-
-
-        let btn3 = document.getElementById("btn3");
-        btn3.addEventListener("click", () => {
-
-            let id = document.getElementById("txtID").value;
-            let nome = document.getElementById("txtNome").value;
-            let pais = document.getElementById("txtPais").value;
-            let estilo = document.getElementById("txtEstilo").value;
-
-            console.log("ID", id);
-            console.log("nome", nome);
-            console.log("pais", pais);
-            console.log("estilo", estilo);
-
-            let bodyFormData = new URLSearchParams();
-            bodyFormData.append('id', id);
-            bodyFormData.append('name', nome);
-            bodyFormData.append('style', estilo);
-            bodyFormData.append('country', pais);
-            axios({
-                method: "post",
-                url: "http://localhost:4000/api/v1/bandas",
-                data: bodyFormData,
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            }).then(function (response) {
-                console.log(response.data);
-                let caixa = document.getElementById("caixaResposta");
-                caixa.innerText = JSON.stringify(response.data);
-            }).catch(function (error) {
-                console.log(error);
-            });
-
-
-        });
+    <script type="module">
+        import "./main.js"
     </script>
+
 </body>
 
 </html>

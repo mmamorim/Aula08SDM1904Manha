@@ -51,17 +51,21 @@
     }
   },
   "pessoas": {
-    "bia": {
-      "id": "bia",
-      "nome": "Bia Soares"
-    },
-    "ana": {
-      "id": "ana",
-      "nome": "Ana Silva"
-    },
     "joao": {
       "id": "joao",
       "name": "João Santos"
+    },
+    "abreu": {
+      "id": "abreu",
+      "name": "Abreu Santos"
+    },
+    "maria": {
+      "id": "maria",
+      "name": "Maria Alface"
+    },
+    "bia": {
+      "id": "bia",
+      "name": "Bia Silva"
     }
   }
 }
