@@ -48,6 +48,12 @@
       "name": "adadadad",
       "country": "Brazil",
       "style": "rock"
+    },
+    "BAN15": {
+      "id": "BAN15",
+      "name": "UMA BANDA 15",
+      "country": "BRA",
+      "style": "POP"
     }
   },
   "pessoas": {
